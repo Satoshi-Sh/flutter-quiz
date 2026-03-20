@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
-class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key, required this.colors});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key, required this.colors});
 
-  const GradientContainer.purple({super.key})
+  const StartScreen.purple({super.key})
     : colors = const [Color.fromARGB(255, 185, 4, 221), Colors.indigo];
 
   final List<Color> colors;
