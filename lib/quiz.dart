@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'questions_screen.dart';
 import 'start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -11,11 +11,17 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  var currentNum = 1;
-  void getAnotherQuiz() {
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = StartScreen(switchScreen);
+    super.initState();
+  }
+
+  void switchScreen() {
     setState(() {
-      var randomNum = Random().nextInt(6) + 1;
-      currentNum = randomNum;
+      activeScreen = QuestionsScreen();
     });
   }
 
@@ -31,7 +37,7 @@ class _QuizState extends State<Quiz> {
               colors: [Color.fromARGB(255, 185, 4, 221), Colors.indigo],
             ),
           ),
-          child: StartScreen(),
+          child: activeScreen,
         ),
       ),
     );

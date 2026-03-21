@@ -3,5 +3,6 @@ import 'package:flutter_quiz/quiz.dart';
 
 void main() {
   runApp(
-    Quiz();
+    Quiz(),
+  );
 }
